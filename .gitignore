@@ -1,0 +1,19 @@
+# .gitignore
+# Ignorar dependências do Node.js
+node_modules/
+client/node_modules/
+
+# Ignorar variáveis de ambiente
+.env
+server/.env
+client/.env
+
+# Ignorar arquivos temporários do macOS
+.DS_Store
+
+# Ignorar logs e configurações locais
+npm-debug.log
+yarn-error.log
+
+# Ignorar pasta de build do React
+client/build/
