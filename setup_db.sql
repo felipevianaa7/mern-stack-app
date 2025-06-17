@@ -1,0 +1,4 @@
+-- setup_db.sql
+CREATE USER felipe WITH PASSWORD '3espadas';
+CREATE DATABASE mern_db WITH OWNER felipe ENCODING 'UTF8';
+GRANT ALL PRIVILEGES ON DATABASE mern_db TO felipe;
