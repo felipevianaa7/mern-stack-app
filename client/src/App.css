@@ -52,3 +52,37 @@
 .users-table th {
   background-color: #f2f2f2;
 }
+
+/* Container principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 60px; /* Espaço extra na base */
+}
+
+/* Tabela */
+.users-table {
+  width: 100%;
+  margin-bottom: auto; /* Empurra o footer para baixo */
+  border-collapse: collapse;
+}
+
+.users-table th, .users-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.users-table th {
+  background-color: #f2f2f2;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: auto; /* Fixa no final */
+  text-align: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+}

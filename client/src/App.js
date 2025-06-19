@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Se precisar de estilos
+import './App.css'; // Importando os estilos
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App-container">
       <h2>Usuários do Banco de Dados</h2>
 
       {loading && <p style={{ fontStyle: 'italic' }}>Carregando...</p>}
@@ -50,7 +50,12 @@ function App() {
           </tbody>
         </table>
       )}
-    </div>
+
+      <footer className="app-footer">
+        © 2024 Sistema de Usuários
+      </footer>
+    </div>    
+    
   );
 }
 
