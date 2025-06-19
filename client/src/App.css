@@ -86,3 +86,10 @@
   padding: 10px;
   background-color: #f8f9fa;
 }
+
+.app-container {
+  padding-bottom: 60px; /* Espaço abaixo de todo o conteúdo */
+}
+.users-table {
+  margin-bottom: 150px; /* Espaço específico abaixo da tabela */
+}

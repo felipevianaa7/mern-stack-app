@@ -25,6 +25,7 @@ function App() {
 
   return (
     <div className="App-container">
+      
       <h2>Usuários do Banco de Dados</h2>
 
       {loading && <p style={{ fontStyle: 'italic' }}>Carregando...</p>}
