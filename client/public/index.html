@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -28,31 +28,16 @@
     <title>React App</title>
   </head>
   <body>
-    <div id="root"></div>
-   <div id="database-content">
-    <h2>Usuários do Banco de Dados</h2>
-    <div id="loading">Carregando...</div>
-    <table id="users-table" style="display:none; margin-top: 20px;">
-      <tread>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Email</th>
-        </tr>
-      </tread>
-      <tbody id="users-data"></tbody>
-    </table>
-   </div>
-
+    <div id="root"></div>   
    <script>
     //Função para carregar dados da API
     async function loadUsers() {
       try {
-        const response = await fetch('http:localhost:3001/db-content');
+        const response = await fetch('http://localhost:3001/db-content');
         if (!response.ok) throw new Error('Erro ao carregar dados');
 
         const data = await response.json();
-        displayYsers(data.users);
+        displayUsers(data.users);
       } catch (error) {
         console.log('Erro:', error);
         document.getElementById('loading').textContent = 'Erro ao carregar dados';
