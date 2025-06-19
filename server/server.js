@@ -84,3 +84,7 @@ app.get('/db-content', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.use(cors({
+    origin: 'http://localhost:3000' // Ou a porta onde seu React está rodando
+}));
