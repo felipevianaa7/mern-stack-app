@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useState, useEffect } from 'react';
+import './App.css'; // Se precisar de estilos
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -26,12 +26,12 @@ function App() {
   return (
     <div className="App">
       <h2>Usuários do Banco de Dados</h2>
-      
-      {loading && <div id="loading">Carregando...</div>}
-      {error && <div className="error">{error}</div>}
 
-      {users.length > 0 && (
-        <table id="users-table">
+      {loading && <p style={{ fontStyle: 'italic' }}>Carregando...</p>}
+      {error && <p style={{ color: 'red' }}>Erro: {error}</p>}
+
+      {!loading && !error && (
+        <table className="users-table">
           <thead>
             <tr>
               <th>ID</th>
@@ -40,7 +40,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {users.map(user => (
+            {users.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.name || 'N/A'}</td>

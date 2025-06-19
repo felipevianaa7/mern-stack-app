@@ -4,69 +4,10 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />   
-    <style>
-    #users-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1rem;
-    }
-    #users-table th, #users-table td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    #users-table th {
-        background-color: #f2f2f2;
-    }
-    #loading {
-        margin: 1rem 0;
-        font-style: italic;
-    }
-    </style>
-    <title>React App</title>
+    <meta name="theme-color" content="#000000" />       
+    <title>Usuários do Banco de Dados</title>
   </head>
   <body>
-    <div id="root"></div>   
-   <script>
-    //Função para carregar dados da API
-    async function loadUsers() {
-      try {
-        const response = await fetch('http://localhost:3001/db-content');
-        if (!response.ok) throw new Error('Erro ao carregar dados');
-
-        const data = await response.json();
-        displayUsers(data.users);
-      } catch (error) {
-        console.log('Erro:', error);
-        document.getElementById('loading').textContent = 'Erro ao carregar dados';
-      }
-    }
-
-    // Função para exibir os dados na tabela
-    function displayUsers(users) {
-      const tbody = document.getElementById('users-data');
-      tbody.innerHTML = '';
-
-      users.forEach(users => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${user.id}</td>
-                <td>${user.name || 'N/A'}</td>
-                <td>${user.email || 'N/A'}</td>
-            `;
-            tbody.appendChild(row);        
-      });
-
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('users-table').style.display = 'table';
-
-      // Carrega os dados quando a página é aberta
-      document.addEventListener('DOMContentLoaded', loadUsers);
-
-    }
-   </script>
-
+    <div id="root"></div>  
   </body>
 </html>
