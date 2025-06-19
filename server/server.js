@@ -74,3 +74,13 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🔗 Teste: http://localhost:${PORT}/test-db`);
 });
+
+//Rota para visualizar dados
+app.get('/db-content', async (req, res) => {
+  try {
+    const [users] = await sequelize.query('SELECT * FROM users');
+    res.json({ users });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
