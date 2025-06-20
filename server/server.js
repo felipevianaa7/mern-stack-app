@@ -75,7 +75,11 @@ app.listen(PORT, () => {
   console.log(`🔗 Teste: http://localhost:${PORT}/test-db`);
 });
 
+<<<<<<< HEAD
 //Rota para visualizar dados
+=======
+
+>>>>>>> dev-master
 app.get('/db-content', async (req, res) => {
   try {
     const [users] = await sequelize.query('SELECT * FROM users');
@@ -83,4 +87,13 @@ app.get('/db-content', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+<<<<<<< HEAD
 });
+=======
+});
+
+app.use(cors({
+    origin: 'http://localhost:3000' // Ou a porta onde seu React está rodando
+}));
+
+>>>>>>> dev-master
